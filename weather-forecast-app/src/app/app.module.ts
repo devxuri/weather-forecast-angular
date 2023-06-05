@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AllCountriesComponent } from './all-countries/all-countries.component';
 import { FavouritesComponent } from './favourites/favourites.component';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { WeatherForecastComponent } from './weather-forecast/weather-forecast.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
