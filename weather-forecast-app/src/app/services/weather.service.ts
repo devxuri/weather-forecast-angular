@@ -3,19 +3,17 @@ import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
+import { ConfigService } from '../config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
   
-    private allCountriesUrl = 'https://restcountries.com/v3.1/all';
-    private weatherUrl = 'https://api.met.no/weatherapi/locationforecast/2.0/compact?';
-
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient, private configService: ConfigService) { }
   
     getAllCountries(): Observable<any[]> {
-      return this.http.get<any[]>(this.allCountriesUrl).pipe(
+      return this.http.get<any[]>(this.configService.allCountriesUrl).pipe(
         map((response: any[]) => {
           return response.map(country => {
             const flag = country.flags?.svg || '';
@@ -52,7 +50,7 @@ export class WeatherService {
       return this.getAllCountries().pipe(
         map(countries => countries.find(country => country.code === code)),
         switchMap(country => {
-          const weatherApiRequest = `${this.weatherUrl}lat=${country.lat}&lon=${country.lng}`;
+          const weatherApiRequest = `${this.configService.weatherUrl}lat=${country.lat}&lon=${country.lng}`;
           return this.http.get(weatherApiRequest).pipe(
             map((response: any) => {
               const forecastData: any[] = [];
