@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { WeatherService } from './services/weather.service';
+import { RoutingService } from './services/routing.service';
 
 @Component({
   selector: 'app-root',
@@ -11,28 +12,16 @@ export class AppComponent {
 
   weatherData: any;
   searchData: any;
-  countriesData: any;
+  
   
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private routingService: RoutingService) {}
 
   ngOnInit(): void {
-    this.subscribeToAllCountries();
     this.subscribeToWeather();
     this.subscribeToFilterSearch();
   }
 
-  subscribeToAllCountries(): void {
-    this.weatherService.getAllCountries().subscribe({
-      next: (data: any[]) => {
-        this.countriesData = data; // Store the received data in a variable if needed
-        console.log(this.countriesData);
-      },
-      error: (error) => {
-        console.error('Error fetching data:', error);
-      }
-    });
-  }
 
   subscribeToFilterSearch(): void{
     this.weatherService.getCountriesByFilter('z').subscribe({
@@ -56,5 +45,9 @@ export class AppComponent {
         console.error('Error fetching weather data:', error);
       }
     });
+  }
+
+  navigateTo(route: string): void {
+    this.routingService.navigateTo(route);
   }
 }

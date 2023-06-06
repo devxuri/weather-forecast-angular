@@ -8,6 +8,7 @@ import { FavouritesComponent } from './favourites/favourites.component';
 import { WeatherForecastComponent } from './weather-forecast/weather-forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
