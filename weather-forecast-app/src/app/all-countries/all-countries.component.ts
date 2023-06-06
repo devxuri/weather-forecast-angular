@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RoutingService } from '../services/routing.service';
 import { WeatherService } from '../services/weather.service';
+import { FavouritesService } from '../services/favourites.service';
 
 @Component({
   selector: 'app-all-countries',
@@ -10,7 +11,7 @@ import { WeatherService } from '../services/weather.service';
 
 export class AllCountriesComponent {
   countriesData: any;
-  constructor(private routingService: RoutingService, private weatherService: WeatherService){
+  constructor(private routingService: RoutingService, private weatherService: WeatherService, private favouritesService: FavouritesService){
   }
   ngOnInit(): void {
     this.subscribeToAllCountries();
@@ -30,6 +31,18 @@ export class AllCountriesComponent {
         console.error('Error fetching data:', error);
       }
     });
+  }
+
+  addToFavourites(countryCode: string): void {
+    this.favouritesService.addToFavourites(countryCode);
+  }
+    
+  removeFromFavourites(countryCode: string): void {
+    this.favouritesService.removeFromFavourites(countryCode);
+  }
+  
+  isFavourite(countryCode: string): boolean {
+    return this.favouritesService.isFavourite(countryCode);
   }
 
 }

@@ -10,6 +10,8 @@
         <div class="card-body">
             <h5 class="card-title">{{country.code}} - {{ country.name }}</h5>
             <p class="card-text">Capital: {{ country.capital }}</p>
+            <button (click)="addToFavourites(country.code)" *ngIf="!isFavourite(country.code)">Add to Favorites</button>
+            <button (click)="removeFromFavourites(country.code)" *ngIf="isFavourite(country.code)">Remove from Favorites</button>
         </div>
     </div>
 </div>
