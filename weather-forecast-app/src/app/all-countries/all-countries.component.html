@@ -1,18 +1,16 @@
 <div class="innernav">
-    <button>All</button>
-    <button (click)="navigateTo('favourites')">Favourites</button>
+  <button>All</button>
+  <button (click)="navigateTo('favourites')">Favourites</button>
 </div>
-<div class="card-container">
-    <div class="card" *ngFor="let country of countriesData">
-        <div class="card-img-container" style="width: 10rem; height: 10rem;">
-            <img [src]="country.flag" alt="Country Flag" class="card-img" style="width: 100%; height: 100%;">
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">{{country.code}} - {{ country.name }}</h5>
-            <p class="card-text">Capital: {{ country.capital }}</p>
-            <button (click)="addToFavourites(country.code)" *ngIf="!isFavourite(country.code)">Add to Favorites</button>
-            <button (click)="removeFromFavourites(country.code)" *ngIf="isFavourite(country.code)">Remove from Favorites</button>
-        </div>
-    </div>
+
+<input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="filterCountry()" class="search-input">
+
+<div class="filtered-card-container" *ngIf="!isSearching(); else allCardContainer">
+  <country-card [countries]="filteredCountries | async"></country-card>
 </div>
-  
+
+<ng-template #allCardContainer>
+  <div class="card-container">
+    <country-card [countries]="countriesData"></country-card>
+  </div>
+</ng-template>
