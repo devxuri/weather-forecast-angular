@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FavouritesService } from '../../services/favourites.service';
+import { FavouritesService } from '../../../services/favourites.service';
 import { Observable } from 'rxjs';
 
 @Component({
