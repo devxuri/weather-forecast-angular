@@ -19,21 +19,9 @@ export class AppComponent {
 
   ngOnInit(): void {
     this.subscribeToWeather();
-    this.subscribeToFilterSearch();
   }
 
 
-  subscribeToFilterSearch(): void{
-    this.weatherService.getCountriesByFilter('z').subscribe({
-      next: (data: any) => {
-        this.searchData = data;
-        console.log(this.searchData);
-      },
-      error: (error: any) => {
-        console.error(error);
-      }
-    })
-  }
 
   subscribeToWeather(): void {
     this.weatherService.getWeatherForecast('IN').subscribe({

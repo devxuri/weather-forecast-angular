@@ -26,7 +26,7 @@ export class FavouritesService {
     }
   }
 
-  getFavouriteCountries(): string[] {
+  getFavouriteCountries(): any[] {
     return this.favouriteCountries;
   }
 

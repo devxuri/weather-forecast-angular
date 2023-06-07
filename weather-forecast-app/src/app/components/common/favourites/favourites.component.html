@@ -2,4 +2,7 @@
     <button (click)="navigateTo('all')">All</button>
     <button>Favourites</button>
 </div>
-<p> Favourites </p>
+<div class="card-container">
+    <country-card [countries]="favouriteCountries"></country-card>
+</div>
+  

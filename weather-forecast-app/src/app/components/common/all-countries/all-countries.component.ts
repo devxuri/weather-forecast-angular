@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RoutingService } from '../../../services/routing.service';
-import { WeatherService } from '../../../services/weather.service';
+import { CountriesService } from '../../../services/countries.service';
 
 import { Observable, of } from 'rxjs';
 
@@ -18,7 +18,7 @@ export class AllCountriesComponent {
 
   constructor(
     private routingService: RoutingService,
-    private weatherService: WeatherService,
+    private countriesService: CountriesService,
   ) {}
 
   ngOnInit(): void {
@@ -30,9 +30,10 @@ export class AllCountriesComponent {
   }
 
   subscribeToAllCountries(): void {
-    this.weatherService.getAllCountries().subscribe({
+    this.countriesService.getAllCountries().subscribe({
       next: (data: any[]) => {
         this.countriesData = data;
+        console.log(this.countriesData);
       },
       error: (error) => {
         console.error('Error fetching data:', error);
@@ -44,7 +45,7 @@ export class AllCountriesComponent {
     clearTimeout(this.searchTimeout);
     this.searchTimeout = setTimeout(() => {
       if (this.searchText) {
-        this.filteredCountries = this.weatherService.getCountriesByFilter(this.searchText);
+        this.filteredCountries = this.countriesService.getCountriesByFilterName(this.searchText);
       }
     }, 200);
   }
