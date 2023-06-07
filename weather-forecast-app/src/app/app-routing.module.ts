@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllCountriesComponent } from './components/common/all-countries/all-countries.component';
 import { FavouritesComponent } from './components/common/favourites/favourites.component';
-import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
+import { WeatherForecastComponent } from './components/common/weather-forecast/weather-forecast.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/all', pathMatch: 'full' },
