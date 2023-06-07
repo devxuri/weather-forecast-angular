@@ -12,4 +12,8 @@ export class RoutingService {
     this.router.navigate([route]);
   }
 
+  navigateToWeatherPage(countryCode: string): void{
+    this.router.navigate(['/weather/', countryCode]);
+  }
+
 }

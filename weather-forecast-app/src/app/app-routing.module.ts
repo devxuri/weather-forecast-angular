@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'all', component: AllCountriesComponent },
   { path: 'favourites', component: FavouritesComponent },
   { path: 'weather/:countryCode', component: WeatherForecastComponent },
-  { path: 'weather/error', component: ErrorComponent }
+  { path: 'error', component: ErrorComponent },
+  { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({

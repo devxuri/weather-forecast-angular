@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FavouritesService } from '../../../services/favourites.service';
 import { Observable } from 'rxjs';
+import { RoutingService } from 'src/app/services/routing.service';
 
 @Component({
   selector: 'country-card',
@@ -13,7 +14,7 @@ export class CountryCardComponent {
   @Output() removeFromFavourites: EventEmitter<string> = new EventEmitter<string>();
   @Output() addToFavourites: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor(private favouritesService: FavouritesService){
+  constructor(private favouritesService: FavouritesService, private routingService: RoutingService){
 
   }
 
@@ -30,6 +31,11 @@ export class CountryCardComponent {
 
   isFavourite(countryCode: string): boolean {
     return this.favouritesService.isFavourite(countryCode);
+  }
+
+  redirectToWeatherPage(countryCode: string): void  {
+    this.routingService.navigateToWeatherPage(countryCode);
+
   }
 
 }

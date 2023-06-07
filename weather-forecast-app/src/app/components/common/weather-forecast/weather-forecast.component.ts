@@ -33,7 +33,7 @@ export class WeatherForecastComponent implements OnInit {
         console.log(this.weatherForecast);
       },
       error: (data: any[]) => {
-        this.routingService.navigateTo('/weather/error');
+        this.routingService.navigateTo('error');
       }}
     );
   }
