@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { RoutingService } from '../../services/routing.service';
-import { WeatherService } from '../../services/weather.service';
+import { RoutingService } from '../../../services/routing.service';
+import { WeatherService } from '../../../services/weather.service';
 
 import { Observable, of } from 'rxjs';
 
