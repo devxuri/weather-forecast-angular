@@ -33,9 +33,12 @@ export class CountryCardComponent {
     return this.favouritesService.isFavourite(countryCode);
   }
 
+  isWeather(): boolean{
+    return this.callingComponent === 'weather';
+  }
+
   redirectToWeatherPage(countryCode: string): void  {
     this.routingService.navigateToWeatherPage(countryCode);
-
   }
 
 }

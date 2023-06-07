@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WeatherService } from 'src/app/services/weather.service';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { RoutingService } from 'src/app/services/routing.service';
+import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
   selector: 'app-weather-forecast',
@@ -10,13 +11,16 @@ import { RoutingService } from 'src/app/services/routing.service';
   styleUrls: ['./weather-forecast.component.scss']
 })
 export class WeatherForecastComponent implements OnInit {
-  countryCode!: string;
-  weatherForecast: any[] = [];
+  countryCode!: string
+  countriesDataSubscription: Observable<any[]> = of([]);
+  countriesData: any[] = [];
+  weatherData: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
     private weatherService: WeatherService,
-    private routingService: RoutingService
+    private routingService: RoutingService,
+    private countriesService: CountriesService
   ) { }
 
   ngOnInit(): void {
@@ -24,13 +28,19 @@ export class WeatherForecastComponent implements OnInit {
       this.countryCode = params['countryCode'];
       this.fetchWeatherForecast();
     });
+    this.fetchCountriesData();
+  }
+
+  fetchCountriesData(): void {
+    this.countriesService.getCountryByFilterCode(this.countryCode).subscribe(data => {
+      this.countriesData = data;
+    });
   }
 
   fetchWeatherForecast(): void {
     this.weatherService.getWeatherForecast(this.countryCode).subscribe({
       next: (data: any[]) => {
-        this.weatherForecast = data;
-        console.log(this.weatherForecast);
+        this.weatherData = data;
       },
       error: (data: any[]) => {
         this.routingService.navigateTo('error');
