@@ -3,6 +3,7 @@
     <button>Favourites</button>
 </div>
 <div class="card-container">
-    <country-card [countries]="favouriteCountries"></country-card>
+    <country-card [countries]="favouriteCountries" callingComponent="favourites" (removeFromFavourites)="removeFromFavourites($event)"></country-card>
+
 </div>
   

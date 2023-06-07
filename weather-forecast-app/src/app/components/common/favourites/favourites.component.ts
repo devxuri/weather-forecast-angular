@@ -37,4 +37,11 @@ export class FavouritesComponent implements OnInit {
     });
   }
 
+  removeFromFavourites(countryCode: string): void {
+    const index = this.favouriteCountries.findIndex(country => country.code === countryCode);
+    if (index !== -1) {
+      this.favouriteCountries.splice(index, 1);
+    }
+  }
+
 }

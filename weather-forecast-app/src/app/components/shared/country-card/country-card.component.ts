@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FavouritesService } from '../../../services/favourites.service';
 import { Observable } from 'rxjs';
 
@@ -9,15 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class CountryCardComponent {
   @Input() countries: any;
+  @Input() callingComponent!: string;
+  @Output() removeFromFavourites: EventEmitter<string> = new EventEmitter<string>();
+  @Output() addToFavourites: EventEmitter<string> = new EventEmitter<string>();
+
   constructor(private favouritesService: FavouritesService){
 
   }
 
-  addToFavourites(countryCode: string): void {
+  onAddToFavourites(countryCode: string): void {
     this.favouritesService.addToFavourites(countryCode);
   }
 
-  removeFromFavourites(countryCode: string): void {
+  onRemoveFromFavourites(countryCode: string): void {
+    if (this.callingComponent === 'favourites') {
+      this.removeFromFavourites.emit(countryCode);
+    }
     this.favouritesService.removeFromFavourites(countryCode);
   }
 
