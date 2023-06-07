@@ -33,7 +33,6 @@ export class AllCountriesComponent {
     this.countriesService.getAllCountries().subscribe({
       next: (data: any[]) => {
         this.countriesData = data;
-        console.log(this.countriesData);
       },
       error: (error) => {
         console.error('Error fetching data:', error);
