@@ -9,6 +9,8 @@ import { FavouritesComponent } from './components/common/favourites/favourites.c
 import { WeatherForecastComponent } from './components/common/weather-forecast/weather-forecast.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryCardComponent } from './components/shared/country-card/country-card.component';
+import { ErrorComponent } from './components/shared/error/error.component';
+import { WeatherCardComponent } from './components/shared/weather-card/weather-card.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CountryCardComponent } from './components/shared/country-card/country-c
     AllCountriesComponent,
     FavouritesComponent,
     WeatherForecastComponent,
-    CountryCardComponent
+    CountryCardComponent,
+    ErrorComponent,
+    WeatherCardComponent
   ],
   imports: [
     BrowserModule,

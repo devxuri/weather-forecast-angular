@@ -7,5 +7,6 @@
       <p class="card-text">Capital: {{ country.capital }}</p>
       <button (click)="onAddToFavourites(country.code)" *ngIf="!isFavourite(country.code)">Add to Favorites</button>
       <button (click)="onRemoveFromFavourites(country.code)" *ngIf="isFavourite(country.code)">Remove from Favorites</button>
+      <button (click)="redirectToWeatherPage(country.code)" *ngIf="!isWeather()">Weather forecast</button>
     </div>
 </div>
