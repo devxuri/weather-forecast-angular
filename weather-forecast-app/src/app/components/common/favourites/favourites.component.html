@@ -1,9 +1,5 @@
-<div class="innernav">
-    <button (click)="navigateTo('all')">All</button>
-    <button>Favourites</button>
-</div>
+<innernav [callingComponent]="navCaller"></innernav>
 <div class="card-container">
     <country-card [countries]="favouriteCountries" callingComponent="favourites" (removeFromFavourites)="removeFromFavourites($event)"></country-card>
-
 </div>
   

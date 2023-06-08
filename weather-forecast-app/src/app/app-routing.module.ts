@@ -4,10 +4,12 @@ import { AllCountriesComponent } from './components/common/all-countries/all-cou
 import { FavouritesComponent } from './components/common/favourites/favourites.component';
 import { WeatherForecastComponent } from './components/common/weather-forecast/weather-forecast.component';
 import { ErrorComponent } from './components/shared/error/error.component';
+import { HomeComponent } from './components/common/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/all', pathMatch: 'full' },
   { path: 'all', component: AllCountriesComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'favourites', component: FavouritesComponent },
   { path: 'weather/:countryCode', component: WeatherForecastComponent },
   { path: 'error', component: ErrorComponent },

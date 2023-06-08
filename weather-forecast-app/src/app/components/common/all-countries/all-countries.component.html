@@ -1,10 +1,8 @@
-<div class="innernav">
-  <button>All</button>
-  <button (click)="navigateTo('favourites')">Favourites</button>
+<innernav [callingComponent]="navCaller"></innernav>
+
+<div class="input-container">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="filterCountry()" class="search-input">
 </div>
-
-<input type="text" [(ngModel)]="searchText" placeholder="Search" (input)="filterCountry()" class="search-input">
-
 <div class="filtered-card-container" *ngIf="!isSearching(); else allCardContainer">
   <country-card [countries]="filteredCountries | async"></country-card>
 </div>

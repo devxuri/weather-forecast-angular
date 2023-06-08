@@ -1,0 +1,6 @@
+body{
+    @include body-remove-whitespace;
+}
+button{
+    cursor: pointer;
+}

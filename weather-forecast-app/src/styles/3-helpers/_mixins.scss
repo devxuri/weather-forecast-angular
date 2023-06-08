@@ -1,0 +1,38 @@
+@mixin body-remove-whitespace{
+    margin: 0;
+    padding: 0;
+}
+
+@mixin background-image($image-url) {
+    background-image: url('#{$image-url}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    &:hover {
+        opacity: 0.8;
+      }
+}
+  
+@mixin card-image-container {
+    padding-right: $padding-small;
+    border: black;
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+  
+@mixin card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  
+@mixin card-button {
+    width: $card-button-size;
+    height: $card-button-size;
+    border: 0;
+    background-color: white;
+  }

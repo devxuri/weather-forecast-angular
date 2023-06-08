@@ -1,0 +1,12 @@
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    height: 4rem;
+}
+
+.input-container input{
+    width: 20rem;
+    border-radius: 1rem;
+}

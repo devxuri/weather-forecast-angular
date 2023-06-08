@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { RoutingService } from '../../../services/routing.service';
 import { CountriesService } from '../../../services/countries.service';
-
 import { Observable, of } from 'rxjs';
 
 
 @Component({
-  selector: 'app-all-countries',
+  selector: 'all-countries',
   templateUrl: './all-countries.component.html',
   styleUrls: ['./all-countries.component.scss']
 })
@@ -15,18 +13,14 @@ export class AllCountriesComponent {
   filteredCountries: Observable<any[]> = of([]);
   searchText: string = '';
   searchTimeout: any;
+  navCaller: string = 'countries';
 
   constructor(
-    private routingService: RoutingService,
-    private countriesService: CountriesService,
+    private countriesService: CountriesService
   ) {}
 
   ngOnInit(): void {
     this.subscribeToAllCountries();
-  }
-
-  navigateTo(route: string): void {
-    this.routingService.navigateTo(route);
   }
 
   subscribeToAllCountries(): void {

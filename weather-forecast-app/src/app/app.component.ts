@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { WeatherService } from './services/weather.service';
-import { RoutingService } from './services/routing.service';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,7 +13,7 @@ export class AppComponent {
   
   
 
-  constructor(private weatherService: WeatherService, private routingService: RoutingService) {}
+  constructor(private weatherService: WeatherService) {}
 
   ngOnInit(): void {
     this.subscribeToWeather();
@@ -33,9 +31,5 @@ export class AppComponent {
         console.error('Error fetching weather data:', error);
       }
     });
-  }
-
-  navigateTo(route: string): void {
-    this.routingService.navigateTo(route);
   }
 }

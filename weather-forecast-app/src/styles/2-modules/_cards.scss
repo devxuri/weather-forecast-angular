@@ -1,0 +1,61 @@
+country-card{
+    display: flex;
+    flex-wrap: wrap;
+    padding: $padding-large;
+    justify-content: flex-start;
+    gap: 1rem;
+    .card{
+        padding: $padding-large;
+        display: flex;
+        align-items: center;
+        border: 2px solid $secondary-color;
+        border-radius: 1rem;
+        transition: box-shadow 0.3s;
+        width: 30rem;
+        height: 15rem;
+        margin: auto;
+        .card-img-container{
+            @include card-image-container;
+            .card-img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .card-body{
+            @include card-body;
+            button{
+                margin: auto;
+                background-color: white;
+                border-radius: 1rem;
+
+            }
+            button.weather-btn{
+                background-color: $secondary-color;
+                color: white;
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Add shadow effect on hover
+          }
+    }
+
+    .card-button{
+        @include card-button;
+    }
+
+    .card-addfav{
+        @include background-image('../../assets/blackstar.svg');
+        &:hover {
+            transform: scale(1.25);
+            @include background-image('../../assets/goldstar.svg');
+        }
+    }
+    .card-remfav{
+        @include background-image('../../assets/goldstar.svg');
+        &:hover {
+            @include background-image('../../assets/blackstar.svg');
+        }
+    }
+}
+

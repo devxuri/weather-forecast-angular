@@ -1,0 +1,17 @@
+.navbar {
+    background-color: $primary-color;
+    height:  $navbar-dimension;
+    
+    button{
+        background-color: $primary-color;
+        width: $navbar-dimension;
+        height: $navbar-dimension;
+        border: 0;
+        @include background-image('../../assets/cloud.svg');
+        cursor: pointer;
+    }
+
+}
+
+
+

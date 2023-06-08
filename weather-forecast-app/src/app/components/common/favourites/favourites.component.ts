@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FavouritesService } from '../../../services/favourites.service';
-import { RoutingService } from 'src/app/services/routing.service';
 import { CountriesService } from 'src/app/services/countries.service';
 import { Observable, of } from 'rxjs';
 
@@ -13,10 +12,10 @@ export class FavouritesComponent implements OnInit {
   favouriteCountryCodes: any[] = [];
   favouriteCountriesSubscription: Observable<any[]> = of([]);
   favouriteCountries: any[] = [];
+  navCaller: string = 'favourites';
 
   constructor(
     private favouritesService: FavouritesService,
-    private routingService: RoutingService,
     private countriesService: CountriesService
   ) {}
 
@@ -24,10 +23,6 @@ export class FavouritesComponent implements OnInit {
     this.favouriteCountryCodes = this.favouritesService.getFavouriteCountries();
     this.favouriteCountriesSubscription = this.countriesService.getCountriesByFilterCodes(this.favouriteCountryCodes);
     this.subscribeCountriesData();
-  }
-
-  navigateTo(route: string): void {
-    this.routingService.navigateTo(route);
   }
 
   subscribeCountriesData(): void {

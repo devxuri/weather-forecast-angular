@@ -11,6 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { CountryCardComponent } from './components/shared/country-card/country-card.component';
 import { ErrorComponent } from './components/shared/error/error.component';
 import { WeatherCardComponent } from './components/shared/weather-card/weather-card.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { InnernavComponent } from './components/shared/innernav/innernav.component';
+import { HomeComponent } from './components/common/home/home.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { WeatherCardComponent } from './components/shared/weather-card/weather-c
     WeatherForecastComponent,
     CountryCardComponent,
     ErrorComponent,
-    WeatherCardComponent
+    WeatherCardComponent,
+    NavbarComponent,
+    InnernavComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
