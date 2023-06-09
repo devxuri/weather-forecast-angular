@@ -7,7 +7,7 @@ import { ErrorComponent } from './components/shared/error/error.component';
 import { HomeComponent } from './components/common/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/all', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'all', component: AllCountriesComponent },
   { path: 'home', component: HomeComponent },
   { path: 'favourites', component: FavouritesComponent },

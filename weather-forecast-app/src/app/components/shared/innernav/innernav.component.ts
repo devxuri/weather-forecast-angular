@@ -13,7 +13,7 @@ export class InnernavComponent {
 
   isCalling(callingComponent: string): void {
     if (callingComponent === 'countries') {
-      this.navigateTo('');
+      this.navigateTo('all');
     } else if (callingComponent === 'favourites') {
       this.navigateTo('favourites');
     }
