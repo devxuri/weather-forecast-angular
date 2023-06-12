@@ -1,6 +1,12 @@
 body{
     @include body-remove-whitespace;
+    background-color: $page-color;
+
 }
 button{
     cursor: pointer;
+}
+
+input{
+    border: none;
 }

@@ -4,8 +4,10 @@ country-card{
     padding: $padding-large;
     justify-content: flex-start;
     gap: 1rem;
+    background-color: $page-color;
     .card{
         padding: $padding-large;
+        background-color: $card-color;
         display: flex;
         align-items: center;
         border: 2px solid $secondary-color;
@@ -26,13 +28,13 @@ country-card{
             @include card-body;
             button{
                 margin: auto;
-                background-color: white;
+                background-color: $card-color;
                 border-radius: 1rem;
 
             }
             button.weather-btn{
-                background-color: $secondary-color;
-                color: white;
+                background-color: $primary-color;
+                color: $background-color;
             }
         }
         &:hover {
@@ -72,6 +74,7 @@ weather-card{
             display: flex;
             align-items: center;
             border: 2px solid $secondary-color;
+            background-color: $card-color;
             border-radius: 1rem;
             width: 20rem;
             height: 10rem;
@@ -81,6 +84,7 @@ weather-card{
                 transition: box-shadow 0.3s;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Add shadow effect on hover
               }   
+              
         }   
     }
 }

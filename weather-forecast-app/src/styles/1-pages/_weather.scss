@@ -2,3 +2,10 @@
 .card-weather{
     width: 100% !important;
 }
+
+weather-card{
+    background-color: $page-color;
+    .cards-container{
+        background-color: $page-color;
+    }
+}
