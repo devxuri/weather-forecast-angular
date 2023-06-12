@@ -59,3 +59,28 @@ country-card{
     }
 }
 
+weather-card{
+
+    padding: $padding-large;
+    .cards-container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+
+        .card{
+            padding: $padding-large;
+            display: flex;
+            align-items: center;
+            border: 2px solid $secondary-color;
+            border-radius: 1rem;
+            width: 20rem;
+            height: 10rem;
+            margin: auto;
+
+            &:hover {
+                transition: box-shadow 0.3s;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); // Add shadow effect on hover
+              }   
+        }   
+    }
+}

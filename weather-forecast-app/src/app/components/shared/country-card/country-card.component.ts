@@ -5,8 +5,7 @@ import { RoutingService } from 'src/app/services/routing.service';
 
 @Component({
   selector: 'country-card',
-  templateUrl: './country-card.component.html',
-  styleUrls: ['./country-card.component.scss']
+  templateUrl: './country-card.component.html'
 })
 export class CountryCardComponent {
   @Input() countries: any;

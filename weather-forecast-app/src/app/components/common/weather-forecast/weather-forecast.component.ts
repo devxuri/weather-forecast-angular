@@ -7,8 +7,7 @@ import { CountriesService } from 'src/app/services/countries.service';
 
 @Component({
   selector: 'app-weather-forecast',
-  templateUrl: './weather-forecast.component.html',
-  styleUrls: ['./weather-forecast.component.scss']
+  templateUrl: './weather-forecast.component.html'
 })
 export class WeatherForecastComponent implements OnInit {
   countryCode!: string

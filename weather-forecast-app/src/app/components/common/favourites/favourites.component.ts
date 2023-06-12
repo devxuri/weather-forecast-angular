@@ -5,8 +5,7 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-favourites',
-  templateUrl: './favourites.component.html',
-  styleUrls: ['./favourites.component.scss']
+  templateUrl: './favourites.component.html'
 })
 export class FavouritesComponent implements OnInit {
   favouriteCountryCodes: any[] = [];

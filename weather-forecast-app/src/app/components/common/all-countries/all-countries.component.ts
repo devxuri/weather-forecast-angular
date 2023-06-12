@@ -5,8 +5,7 @@ import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'all-countries',
-  templateUrl: './all-countries.component.html',
-  styleUrls: ['./all-countries.component.scss']
+  templateUrl: './all-countries.component.html'
 })
 export class AllCountriesComponent {
   countriesData: any;

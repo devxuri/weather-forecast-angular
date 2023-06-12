@@ -3,8 +3,7 @@ import { RoutingService } from 'src/app/services/routing.service';
 
 @Component({
   selector: 'innernav',
-  templateUrl: './innernav.component.html',
-  styleUrls: ['./innernav.component.scss']
+  templateUrl: './innernav.component.html'
 })
 export class InnernavComponent {
   @Input() callingComponent!: string;
