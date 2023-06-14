@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CountriesService } from '../../../services/countries.service';
 import { Observable, of } from 'rxjs';
+import { CountriesService } from 'src/app/core/services/countries.service';
 
 
 @Component({

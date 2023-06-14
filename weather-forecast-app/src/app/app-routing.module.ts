@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllCountriesComponent } from './components/common/all-countries/all-countries.component';
-import { FavouritesComponent } from './components/common/favourites/favourites.component';
-import { WeatherForecastComponent } from './components/common/weather-forecast/weather-forecast.component';
-import { ErrorComponent } from './components/shared/error/error.component';
-import { HomeComponent } from './components/common/home/home.component';
+import { AllCountriesComponent } from './feature/all-countries/all-countries.component';
+import { FavouritesComponent } from './feature/favourites/favourites.component';
+import { WeatherForecastComponent } from './feature/weather-forecast/weather-forecast.component';
+import { ErrorComponent } from './shared/error/error.component';
+import { HomeComponent } from './feature/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
