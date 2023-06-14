@@ -1,21 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
-  private isAuthenticate: boolean = false;
-  constructor(private http: HttpClient) {}
+    private readonly AUTH_KEY = 'isAuthenticated';
 
-  signIn(username: string, password: string): void/*Observable<any*/ {
+    constructor() {}
 
-  }
-  signUp(username: string, password: string): void /*Observable<any>*/ {
-
-  }
+    get isAuthenticated(): boolean {
+      return sessionStorage.getItem(this.AUTH_KEY) === 'true';
+    }
   
-
-  public isAuthenticated(): boolean {
-    return this.isAuthenticate;
-  }
+    set isAuthenticated(value: boolean) {
+      sessionStorage.setItem(this.AUTH_KEY, value.toString());
+    }
 }
