@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
-
+import { CountriesService } from './services/countries.service';
+import { FavouritesService } from './services/favourites.service';
 
 
 @NgModule({
@@ -10,6 +11,6 @@ import { AuthGuard } from './auth.guard';
   imports: [
     CommonModule
   ],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthService, AuthGuard, CountriesService, FavouritesService]
 })
 export class CoreModule { }

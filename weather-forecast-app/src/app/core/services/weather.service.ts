@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { formatDate } from '@angular/common';
 import { Observable, forkJoin, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '../../config/config.service';
 import { CountriesService } from './countries.service';
 
 @Injectable({

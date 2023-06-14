@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthService {
-  private isAuthenticate: boolean = false; // Example property, you may have your own implementation
+  private isAuthenticate: boolean = false;
   constructor(private http: HttpClient) {}
 
   signIn(username: string, password: string): void/*Observable<any*/ {

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FavouritesService } from '../../../services/favourites.service';
-import { CountriesService } from 'src/app/services/countries.service';
+import { FavouritesService } from 'src/app/core/services/favourites.service';
+import { CountriesService } from 'src/app/core/services/countries.service';
 import { Observable, of } from 'rxjs';
 
 @Component({
-  selector: 'app-favourites',
+  selector: 'favourites',
   templateUrl: './favourites.component.html'
 })
 export class FavouritesComponent implements OnInit {

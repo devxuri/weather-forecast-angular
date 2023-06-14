@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { WeatherService } from 'src/app/services/weather.service';
+import { WeatherService } from 'src/app/core/services/weather.service';
 import { Observable, of } from 'rxjs';
-import { RoutingService } from 'src/app/services/routing.service';
-import { CountriesService } from 'src/app/services/countries.service';
+import { RoutingService } from 'src/app/core/services/routing.service';
+import { CountriesService } from 'src/app/core/services/countries.service';
 
 @Component({
   selector: 'app-weather-forecast',
