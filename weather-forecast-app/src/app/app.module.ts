@@ -4,36 +4,32 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AllCountriesComponent } from './components/common/all-countries/all-countries.component';
 import { FavouritesComponent } from './components/common/favourites/favourites.component';
 import { WeatherForecastComponent } from './components/common/weather-forecast/weather-forecast.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CountryCardComponent } from './components/shared/country-card/country-card.component';
-import { ErrorComponent } from './components/shared/error/error.component';
-import { WeatherCardComponent } from './components/shared/weather-card/weather-card.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { InnernavComponent } from './components/shared/innernav/innernav.component';
 import { HomeComponent } from './components/common/home/home.component';
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+import { AllCountriesModule } from './feature/all-countries/all-countries.module';
+import { AllCountriesComponent } from './components/common/all-countries/all-countries.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AllCountriesComponent,
     FavouritesComponent,
     WeatherForecastComponent,
-    CountryCardComponent,
-    ErrorComponent,
-    WeatherCardComponent,
-    NavbarComponent,
-    InnernavComponent,
-    HomeComponent
+    HomeComponent,
+    AllCountriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AllCountriesModule,
+    CoreModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
