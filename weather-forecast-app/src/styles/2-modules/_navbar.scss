@@ -11,6 +11,11 @@
         cursor: pointer;
     }
 
+    .button-login{
+        @include background-image('../../assets/login.svg');
+
+    }
+
 }
 
 

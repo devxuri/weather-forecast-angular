@@ -11,6 +11,7 @@ import { AllCountriesModule } from './feature/all-countries/all-countries.module
 import { FavouritesModule } from './feature/favourites/favourites.module';
 import { HomeModule } from './feature/home/home.module';
 import { WeatherForecastModule } from './feature/weather-forecast/weather-forecast.module';
+import { AuthModule } from './feature/auth/auth.module';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { WeatherForecastModule } from './feature/weather-forecast/weather-foreca
     CoreModule,
     SharedModule,
     HomeModule,
-    WeatherForecastModule
+    WeatherForecastModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

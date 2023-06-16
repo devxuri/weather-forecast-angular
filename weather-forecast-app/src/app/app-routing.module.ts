@@ -5,13 +5,16 @@ import { FavouritesComponent } from './feature/favourites/favourites.component';
 import { WeatherForecastComponent } from './feature/weather-forecast/weather-forecast.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { HomeComponent } from './feature/home/home.component';
+import { LoginComponent } from './feature/auth/login/login.component';
+import { AuthGuard } from './core/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'all', component: AllCountriesComponent },
+  { path: 'all', component: AllCountriesComponent, canActivate: [AuthGuard]},
   { path: 'home', component: HomeComponent },
-  { path: 'favourites', component: FavouritesComponent },
-  { path: 'weather/:countryCode', component: WeatherForecastComponent },
+  { path: 'login', component: LoginComponent},
+  { path: 'favourites', component: FavouritesComponent, canActivate: [AuthGuard] },
+  { path: 'weather/:countryCode', component: WeatherForecastComponent, canActivate: [AuthGuard] },
   { path: 'error', component: ErrorComponent },
   { path: '**', redirectTo: 'error' }
 ];
