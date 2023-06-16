@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RoutingService } from 'src/app/core/services/routing.service';
 
 @Component({
-  selector: 'app-home',
+  selector: 'home',
   templateUrl: './home.component.html'
 })
 export class HomeComponent {

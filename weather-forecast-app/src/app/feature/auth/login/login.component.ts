@@ -3,7 +3,7 @@ import { AuthService } from 'src/app/core/auth.service';
 import { RoutingService } from 'src/app/core/services/routing.service';
 
 @Component({
-  selector: 'app-login',
+  selector: 'login',
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
@@ -27,7 +27,13 @@ export class LoginComponent {
 
   }
 
-  check(): void {
-    console.log(this.authService.isAuthenticated);
+  get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated;
   }
+
+  signOut(): void {
+    // Sign out logic
+    this.authService.isAuthenticated = false;
+  }
+
 }

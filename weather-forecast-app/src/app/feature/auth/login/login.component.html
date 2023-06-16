@@ -1,14 +1,23 @@
-<h2>Login</h2>
-
-<div>
-  <label for="username">Username:</label>
-  <input type="text" id="username" [(ngModel)]="username">
-</div>
-
-<div>
-  <label for="password">Password:</label>
-  <input type="password" id="password" [(ngModel)]="password">
-</div>
-
-<button (click)="signIn()">Sign In</button>
-<button (click)="check()">Check</button>
+<article>
+    <h1>Login here!</h1>
+  
+    <div *ngIf="!isAuthenticated">
+      <label for="username">Username:</label>
+      <br>
+      <input type="text" id="username" [(ngModel)]="username">
+    </div>
+  
+    <div *ngIf="!isAuthenticated">
+      <label for="password">Password:</label>
+      <br>
+      <input type="password" id="password" [(ngModel)]="password">
+    </div>
+  
+    <button *ngIf="!isAuthenticated" class="login-sign" (click)="signIn()">Sign In</button>
+    <button *ngIf="isAuthenticated" class="login-sign" (click)="signOut()">Log Out</button>
+    
+    <div *ngIf="isAuthenticated">
+      You are logged in!
+    </div>
+</article>
+  

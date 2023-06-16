@@ -1,0 +1,26 @@
+login{
+    display: flex;
+    height: $home-page-sizing;
+    width: 100%;
+    align-items: center;
+    
+    article{
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input{
+        background-color: $card-color;
+        border-radius: 1rem;
+    }
+
+    button.login-sign{ 
+        width: 100%;
+        height: 2rem;
+        margin: $padding-small 0;
+        border-radius: 1rem;
+
+    }
+}
