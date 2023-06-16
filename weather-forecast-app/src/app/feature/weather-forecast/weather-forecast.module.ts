@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WeatherForecastComponent } from './weather-forecast.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { WeatherForecastRoutingModule } from './weather-forecast-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   declarations: [WeatherForecastComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    WeatherForecastRoutingModule
   ]
 })
 export class WeatherForecastModule { }
