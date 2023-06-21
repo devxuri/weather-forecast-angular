@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { FavouritesService } from '../../core/services/favourites.service';
-import { Observable } from 'rxjs';
-import { RoutingService } from 'src/app/core/services/routing.service';
+import { FavouritesService } from 'src/app/feature/favourites/services/favourites.service';
+import { RoutingService } from 'src/app/core/routing.service';
 
 @Component({
   selector: 'country-card',
