@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { CountriesService } from 'src/app/core/services/countries.service';
-
 
 @Component({
   selector: 'all-countries',
@@ -11,15 +11,14 @@ export class AllCountriesComponent {
   countriesData: any;
   filteredCountries: Observable<any[]> = of([]);
   searchText: string = '';
-  searchTimeout: any;
+  private searchSubject: Subject<string> = new Subject<string>();
   navCaller: string = 'countries';
 
-  constructor(
-    private countriesService: CountriesService
-  ) {}
+  constructor(private countriesService: CountriesService) {}
 
   ngOnInit(): void {
     this.subscribeToAllCountries();
+    this.setupSearchSubscription();
   }
 
   subscribeToAllCountries(): void {
@@ -33,13 +32,27 @@ export class AllCountriesComponent {
     });
   }
 
+  setupSearchSubscription(): void {
+    this.searchSubject
+      .pipe(
+        debounceTime(200),
+        distinctUntilChanged(), 
+        switchMap((searchText: string) => {
+          console.log(searchText);
+          if (searchText) {
+            return this.countriesService.getCountriesByFilterName(searchText);
+          } else {
+            return of([]);
+          }
+        })
+      )
+      .subscribe((filteredCountries: any[]) => {
+        this.filteredCountries = of(filteredCountries);
+      });
+  }
+
   filterCountry(): void {
-    clearTimeout(this.searchTimeout);
-    this.searchTimeout = setTimeout(() => {
-      if (this.searchText) {
-        this.filteredCountries = this.countriesService.getCountriesByFilterName(this.searchText);
-      }
-    }, 200);
+    this.searchSubject.next(this.searchText);
   }
 
   isSearching(): boolean {
