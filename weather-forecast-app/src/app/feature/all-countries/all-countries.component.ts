@@ -35,10 +35,9 @@ export class AllCountriesComponent {
   setupSearchSubscription(): void {
     this.searchSubject
       .pipe(
-        debounceTime(200),
+        debounceTime(200), 
         distinctUntilChanged(), 
         switchMap((searchText: string) => {
-          console.log(searchText);
           if (searchText) {
             return this.countriesService.getCountriesByFilterName(searchText);
           } else {
