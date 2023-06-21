@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
-import { CountriesService } from 'src/app/core/services/countries.service';
+import { CountriesService } from './services/countries.service';
 
 @Component({
   selector: 'all-countries',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, forkJoin, of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { ConfigService } from '../../config/config.service';
+import { ConfigService } from 'src/app/config/config.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
