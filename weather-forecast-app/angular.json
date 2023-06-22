@@ -89,11 +89,13 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets/blackstar.svg",
+              "src/assets/cloud.svg",
+              "src/assets/goldstar.svg",
+              "src/assets/login.svg"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           }
